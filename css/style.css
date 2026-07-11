@@ -2209,16 +2209,16 @@ html, body { overflow-x: hidden; }
 /* Section tag pill */
 .section-tag {
   display: inline-block;
-  background: var(--accent-light);
   color: var(--accent-gold);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 0.35rem 1rem;
-  border-radius: var(--radius-round);
   margin-bottom: 0.75rem;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .section-title-wrapper {
@@ -2932,5 +2932,97 @@ html, body { overflow-x: hidden; }
   .announcement-ticker {
     height: 24px;
     width: 100%;
+  }
+}
+
+/* --- Clean Hero Typography details --- */
+.hero-subtitle {
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-highlights li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlight-icon {
+  color: var(--accent-gold);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* Marquee styles */
+.announcement-ticker marquee {
+  display: block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.announcement-ticker marquee span {
+  margin-right: 3rem;
+  display: inline-block;
+}
+
+/* responsive hero grid styles */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  .hero-content {
+    text-align: center !important;
+  }
+  .hero-actions {
+    justify-content: center !important;
+  }
+  .hero-highlights {
+    justify-content: center !important;
+  }
+  .hero-showcase {
+    height: 380px !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 6rem 0 3.5rem 0 !important;
+  }
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+  .hero-showcase {
+    height: 280px !important;
+  }
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    max-width: 300px !important;
   }
 }
