@@ -451,7 +451,7 @@ header.sticky .navbar {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(5, 22, 46, 0.92) 0%, rgba(11, 46, 89, 0.75) 50%, rgba(5, 22, 46, 0.95) 100%);
+  background: linear-gradient(to bottom, rgba(5, 22, 46, 0.45) 0%, rgba(5, 22, 46, 0.35) 60%, rgba(5, 22, 46, 0.65) 100%);
 }
 
 .hero-content {
@@ -486,14 +486,14 @@ header.sticky .navbar {
   line-height: 1.15;
   color: var(--bg-white);
   margin-bottom: 1.5rem;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.95);
 }
 
 .hero-desc {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
-  font-weight: 300;
+  font-weight: 400; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -1350,12 +1350,7 @@ footer {
   border-top: 4px solid var(--accent-gold);
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
-  gap: 3rem;
-  margin-bottom: 3.5rem;
-}
+
 
 .footer-logo-col .logo-title {
   color: var(--bg-white);
@@ -2724,4 +2719,72 @@ html, body { overflow-x: hidden; }
 /* Currently not implementing dark mode as school sites
    typically don't support it. Left as hook for future. */
 
+
+
+/* --- Top Bar Action Buttons --- */
+.top-btn {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all var(--transition-fast);
+}
+
+.top-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  filter: brightness(1.1);
+}
+
+.compliance-btn {
+  background-color: #d93838; /* Vibrant Red */
+}
+
+.tc-btn {
+  background-color: #1e70cd; /* Vibrant Blue */
+}
+
+.admission-btn {
+  background-color: #e67e22; /* Vibrant Orange */
+}
+
+.login-btn {
+  background-color: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Edit footer-grid for 3 columns */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Responsive adjustment for top-bar elements */
+@media (max-width: 1200px) {
+  .top-bar-info li:nth-child(3) {
+    display: none; /* Hide long address on tablet/laptops to fit action buttons */
+  }
+}
+
+@media (max-width: 992px) {
+  .top-bar-info {
+    gap: 0.75rem;
+  }
+  .top-bar-links {
+    gap: 0.5rem;
+  }
+  .top-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
 
