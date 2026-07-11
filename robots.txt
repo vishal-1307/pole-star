@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /scratch/
 
-Sitemap: https://www.polestarschool.co.in/sitemap.xml
+Sitemap: https://pole-star-wheat.vercel.app/sitemap.xml

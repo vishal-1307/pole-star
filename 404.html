@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Pole Star School, Madhubani</title>
+  <meta name="description" content="The page you are looking for could not be found. Return to the Pole Star School homepage.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 60%, var(--primary-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .error-page::before {
+      content: '404';
+      position: absolute;
+      font-family: var(--font-heading);
+      font-size: 30vw;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      user-select: none;
+      pointer-events: none;
+    }
+    .error-card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 4rem;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .error-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .error-logo img {
+      height: 48px;
+      width: auto;
+      border-radius: var(--radius-sm);
+    }
+    .error-logo-text span:first-child {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #fff;
+    }
+    .error-logo-text span:last-child {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .error-desc {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .error-btn-primary {
+      background: var(--accent-gold);
+      color: var(--primary-dark);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition-normal);
+    }
+    .error-btn-primary:hover {
+      background: #dcb33f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(197,155,39,0.35);
+    }
+    .error-btn-outline {
+      background: transparent;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition-normal);
+    }
+    .error-btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.6);
+      transform: translateY(-2px);
+    }
+    .error-quick-links {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .error-quick-links p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .error-quick-links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .error-quick-link {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all var(--transition-fast);
+    }
+    .error-quick-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    @media (max-width: 600px) {
+      .error-card { padding: 2.5rem 1.5rem; }
+      .error-code { font-size: 4rem; }
+      .error-title { font-size: 1.4rem; }
+      .error-actions { flex-direction: column; }
+      .error-btn-primary, .error-btn-outline { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div class="error-card">
+      <div class="error-logo">
+        <img src="assets/images/logo.png" alt="Pole Star School Logo">
+        <div class="error-logo-text">
+          <span>POLE STAR SCHOOL</span>
+          <span>Madhubani, Bihar</span>
+        </div>
+      </div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-desc">The page you're looking for doesn't exist or has been moved. Please use the navigation below to find what you need.</p>
+      <div class="error-actions">
+        <a href="index.html" class="error-btn-primary">
+          <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          Back to Home
+        </a>
+        <a href="contact-us.html" class="error-btn-outline">
+          <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Contact Us
+        </a>
+      </div>
+      <div class="error-quick-links">
+        <p>Quick Navigation</p>
+        <div class="error-quick-links-grid">
+          <a href="about.html" class="error-quick-link">About</a>
+          <a href="academics.html" class="error-quick-link">Academics</a>
+          <a href="admission.html" class="error-quick-link">Admission</a>
+          <a href="facilities.html" class="error-quick-link">Facilities</a>
+          <a href="gallery.html" class="error-quick-link">Gallery</a>
+          <a href="downloads.html" class="error-quick-link">Downloads</a>
+          <a href="polestar-school-mandatory-public-disclosure.html" class="error-quick-link">CBSE Disclosure</a>
+          <a href="admission-enquiry.html" class="error-quick-link">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

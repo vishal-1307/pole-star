@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (lowercaseQuery.includes('hostel') || lowercaseQuery.includes('boarding') || lowercaseQuery.includes('stay')) {
           reply = "Pole Star School offers excellent day-boarding and full-boarding hostel options for both boys and girls with safe, secure, and modern amenities.";
         } else if (lowercaseQuery.includes('location') || lowercaseQuery.includes('where') || lowercaseQuery.includes('address')) {
-          reply = "We are located at Jeewachh Chowk, Ram Nagar, Rohika, Madhubani, Bihar - 847211. Feel free to explore the interactive Google Map in our Contact section!";
+          reply = "We are located at Jeewachh Chowk, Sapta, Madhubani, Bihar - 847214. Feel free to explore the interactive Google Map in our Contact section!";
         } else if (lowercaseQuery.includes('cbse') || lowercaseQuery.includes('affiliation') || lowercaseQuery.includes('disclosure')) {
           reply = "Yes, we are affiliated with the CBSE Board up to +2 level (Affiliation No. 330199). All mandatory disclosure documents are available on our 'CBSE Disclosure' page.";
         } else if (lowercaseQuery.includes('hello') || lowercaseQuery.includes('hi') || lowercaseQuery.includes('hey')) {
@@ -327,4 +327,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Mobile Navigation Dropdowns Accordion ---
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parent = toggle.parentElement;
+        parent.classList.toggle('open');
+      }
+    });
+  });
+
 });
+
