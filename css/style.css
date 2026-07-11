@@ -601,9 +601,9 @@ header.sticky .navbar {
   background-color: var(--bg-light);
   padding: var(--spacing-lg) 0;
   position: relative;
-  margin-top: -20px;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  z-index: 30;
+  margin-top: 0;
+  border-radius: 0;
+  z-index: 10;
 }
 
 .stats-grid {
