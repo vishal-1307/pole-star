@@ -36,14 +36,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Mobile Hamburger Menu ---
+  // --- Mobile Hamburger Menu and Backdrop Overlay ---
   const mobileNavToggle = document.getElementById('mobileNavToggle');
   const navMenu = document.getElementById('navMenu');
+  
+  // Create backdrop element dynamically
+  const navBackdrop = document.createElement('div');
+  navBackdrop.className = 'nav-backdrop';
+  document.body.appendChild(navBackdrop);
 
   if (mobileNavToggle && navMenu) {
     mobileNavToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
       mobileNavToggle.classList.toggle('open');
-      navMenu.classList.toggle('open');
+      navBackdrop.classList.toggle('active', isOpen);
+    });
+
+    // Close menu when backdrop is clicked
+    navBackdrop.addEventListener('click', () => {
+      mobileNavToggle.classList.remove('open');
+      navMenu.classList.remove('open');
+      navBackdrop.classList.remove('active');
     });
 
     // Close menu when clicking navigation links
@@ -51,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         mobileNavToggle.classList.remove('open');
         navMenu.classList.remove('open');
+        navBackdrop.classList.remove('active');
       });
     });
   }
@@ -331,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 820) {
         e.preventDefault();
         const parent = toggle.parentElement;
         parent.classList.toggle('open');
