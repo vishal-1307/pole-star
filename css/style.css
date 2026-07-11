@@ -2334,12 +2334,18 @@ html, body { overflow-x: hidden; }
     align-items: flex-start;
     padding: 7rem 2rem 3rem 2rem;
     z-index: 105;
-    transition: right var(--transition-normal);
+    transition: right var(--transition-normal), visibility var(--transition-normal);
     overflow-y: auto;
     gap: 0.25rem;
+    visibility: hidden;
+    pointer-events: none;
   }
 
-  .nav-menu.open { right: 0; }
+  .nav-menu.open {
+    right: 0;
+    visibility: visible;
+    pointer-events: auto;
+  }
   .mobile-nav-toggle { display: block; }
 
   /* Mobile dropdown behavior */
@@ -2870,13 +2876,17 @@ html, body { overflow-x: hidden; }
     align-items: stretch;
     padding: 6rem 1.5rem 3rem 1.5rem;
     z-index: 105;
-    transition: right var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+    transition: right var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1), visibility var(--transition-normal);
     overflow-y: auto;
     gap: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
   
   .nav-menu.open {
     right: 0;
+    visibility: visible;
+    pointer-events: auto;
   }
   
   .nav-link {
@@ -2986,8 +2996,9 @@ html, body { overflow-x: hidden; }
 /* responsive hero grid styles */
 @media (max-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 3rem !important;
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 2.5rem !important;
     text-align: center !important;
   }
   .hero-content {
@@ -3002,6 +3013,7 @@ html, body { overflow-x: hidden; }
   .hero-showcase {
     height: 380px !important;
     max-width: 500px !important;
+    width: 100% !important;
     margin: 0 auto !important;
   }
 }
